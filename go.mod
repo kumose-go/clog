@@ -1,6 +1,6 @@
 module github.com/kumose-go/clog
 
-go 1.25.4
+go 1.25.1
 
 retract v0.3.0 // this version was buggy
 
