@@ -5,7 +5,7 @@ import (
 	"strings"
 	"sync"
 
-	"charm.land/lipgloss/v2"
+	"github.com/charmbracelet/lipgloss/v2"
 	"github.com/charmbracelet/colorprofile"
 )
 
