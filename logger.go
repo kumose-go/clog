@@ -11,10 +11,28 @@ import (
 var Styles = DefaultTheme
 
 // Strings mapping.
+var PlainStrings = [...]string{
+	DebugLevel: "⇢",
+	InfoLevel:  "•",
+	WarnLevel:  "•",
+	ErrorLevel: "⨯",
+	FatalLevel: "◼",
+}
+
+// Strings mapping.
 var Strings = [...]string{
 	DebugLevel: "⚙",
 	InfoLevel:  "•",
-	WarnLevel:  "△",
+	WarnLevel:  "⚠",
+	ErrorLevel: "⨯",
+	FatalLevel: "◼",
+}
+
+// Strings mapping.
+var CheckStrings = [...]string{
+	DebugLevel: "⚙",
+	InfoLevel:  "✓",
+	WarnLevel:  "⚠",
 	ErrorLevel: "⨯",
 	FatalLevel: "◼",
 }
