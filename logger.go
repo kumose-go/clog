@@ -2,21 +2,13 @@ package clog
 
 import (
 	"fmt"
+	"io"
 	"strings"
 	"sync"
-
-	"github.com/charmbracelet/lipgloss/v2"
-	"github.com/charmbracelet/colorprofile"
 )
 
 // Styles mapping.
-var Styles = [...]lipgloss.Style{
-	DebugLevel: lipgloss.NewStyle().Foreground(lipgloss.Color("#545f46")).Bold(true),
-	InfoLevel:  lipgloss.NewStyle().Foreground(lipgloss.Color("#047c8c")).Bold(true),
-	WarnLevel:  lipgloss.NewStyle().Foreground(lipgloss.Color("#c29c05")).Bold(true),
-	ErrorLevel: lipgloss.NewStyle().Foreground(lipgloss.Color("#8d2306")).Bold(true),
-	FatalLevel: lipgloss.NewStyle().Foreground(lipgloss.Color("#f63c09")).Bold(true),
-}
+var Styles = DefaultTheme
 
 // Strings mapping.
 var Strings = [...]string{
@@ -35,7 +27,7 @@ var _ Interface = (*Logger)(nil)
 // Logger represents a logger with configurable Level and Handler.
 type Logger struct {
 	mu      sync.Mutex
-	Writer  *colorprofile.Writer
+	Writer  io.Writer
 	Level   Level
 	Padding int
 }
